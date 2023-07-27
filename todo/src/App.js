@@ -21,7 +21,7 @@ function App() {
 
   const deleteTodo = (id) => {
     const _todos = todos.filter((todo, i) => { return i !== id })
-    setTodos([..._todos])
+    setTodos(_todos)
     localStorage.setItem('todos', JSON.stringify(_todos))
   }
 
