@@ -19,6 +19,12 @@ function App() {
     localStorage.setItem('todos', JSON.stringify([...todos, inputText]))
   }
 
+	const deleteTodo = (id) => {
+		const _todos = todos.filter((todo, i) => { return i !== id })
+    setTodos([..._todos])
+    localStorage.setItem('todos', JSON.stringify(_todos))
+	}
+
   useEffect(() => {
     const storedTodos = localStorage.getItem('todos')
     if (storedTodos) {
@@ -40,8 +46,7 @@ function App() {
       </form>
       <ul>
         {todos.map((todo, i) => (
-          <li key={i}>{todo}</li>
-        ))}
+          <li key={i}>{todo} <button onClick={() => deleteTodo(i)}>x</button></li>))}
       </ul>
     </div>
   );
