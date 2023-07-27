@@ -19,11 +19,11 @@ function App() {
     localStorage.setItem('todos', JSON.stringify([...todos, inputText]))
   }
 
-	const deleteTodo = (id) => {
-		const _todos = todos.filter((todo, i) => { return i !== id })
+  const deleteTodo = (id) => {
+    const _todos = todos.filter((todo, i) => { return i !== id })
     setTodos([..._todos])
     localStorage.setItem('todos', JSON.stringify(_todos))
-	}
+  }
 
   useEffect(() => {
     const storedTodos = localStorage.getItem('todos')
@@ -41,7 +41,7 @@ function App() {
           value={inputText}
           onChange={onChangeInput}
           placeholder='Enter'
-          />
+        />
         <button type='submit'>Add</button>
       </form>
       <ul>
