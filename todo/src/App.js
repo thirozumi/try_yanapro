@@ -45,22 +45,21 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <h1>Todo</h1>
+    <div className="app">
       <form onSubmit={onSubmitForm}>
         <input
           type="text"
           value={inputText}
           onChange={onChangeInput}
-          placeholder='Enter'
+          placeholder='Enter to Add'
         />
-        <button type='submit'>Add</button>
       </form>
-      <ul>
+      <p>timestamp: {timestamp}</p>
+      <ul className='todos'>
         {todos.map((todo, i) => (
           <li key={i}>
-            <div>title: {todo.title}</div>
-            <div>createdAt: {todo.createdAt}</div>
+            <p>{todo.title}</p>
+            <small>createdAt: {todo.createdAt}</small>
             <button onClick={() => deleteTodo(i)}>x</button>
           </li>))}
       </ul>

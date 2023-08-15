@@ -1,3 +1,28 @@
-.App {
+.app {
   margin: 1rem;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0;
+  list-style: none;
+  > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+    > p {
+      margin: 0;
+    }
+    > * + * {
+      margin-block-start: 0.5rem;
+    }
+    > button {
+      position: absolute;
+      right: 0;
+    }
+  }
 }
