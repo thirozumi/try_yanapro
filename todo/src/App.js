@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
-import dayjs from 'dayjs'
 
 function App() {
 
   const [inputText, setInputText] = useState('')
-  const [timestamp, setTimestamp] = useState('')
   const [todos, setTodos] = useState([])
 
   const onChangeInput = (e) => {
@@ -14,21 +12,11 @@ function App() {
 
   const onSubmitForm = (e) => {
     e.preventDefault()
-    const now = dayjs().format('YYYY-MM-DD HH:mm:ss')
-
     if (inputText.trim() !== '') {
-      setTimestamp(now)
-      setTodos([...todos, {
-        title: inputText,
-        createdAt: now
-      }])
+      setTodos([...todos, { title: inputText }])
       setInputText('')
     }
-
-    localStorage.setItem('todos', JSON.stringify([...todos, {
-      title: inputText,
-      createdAt: now
-    }]))
+    localStorage.setItem('todos', JSON.stringify([...todos, { title: inputText }]))
   }
 
   const deleteTodo = (id) => {
@@ -54,12 +42,10 @@ function App() {
           placeholder='Enter to Add'
         />
       </form>
-      <p>timestamp: {timestamp}</p>
       <ul className='todos'>
         {todos.map((todo, i) => (
           <li key={i}>
             <p>{todo.title}</p>
-            <small>createdAt: {todo.createdAt}</small>
             <button onClick={() => deleteTodo(i)}>x</button>
           </li>))}
       </ul>
