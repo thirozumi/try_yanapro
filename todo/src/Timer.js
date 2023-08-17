@@ -9,8 +9,8 @@ const Timer = (props) => {
 		initialRunning = false
 	} = props
 
-  const [minutes, setMinutes] = useState(initialMinute)
-  const [seconds, setSeconds] = useState(initialSeconds)
+	const [minutes, setMinutes] = useState(initialMinute)
+	const [seconds, setSeconds] = useState(initialSeconds)
 	const [running, setRunning] = useState(initialRunning)
 
 	const start = () => setRunning(true)
@@ -20,11 +20,11 @@ const Timer = (props) => {
 		setSeconds(initialSeconds)
 	}
 	const stop = () => {
-    pause()
-    reset()
-  }
+		pause()
+		reset()
+	}
 
-  useEffect(() => {
+	useEffect(() => {
 		if (running) {
 			const myInterval = setInterval(() => {
 				if (seconds > 0) {
@@ -43,21 +43,21 @@ const Timer = (props) => {
 				clearInterval(myInterval)
 			}
 		}
-  })
-  
-  return (
+	})
+
+	return (
 		<div className='timer'>
 			<h1 className='timer-display'>
 				{minutes}:{seconds < 10 ? `0${seconds}` : seconds}
 			</h1>
 			<p className='timer-control'>
 				<button className="timer-button-primary" onClick={() => running ? pause() : start()}>
-         {running ? "Pause" : "Start"}
-        </button>
-        <button onClick={stop}>Reset</button>
+					{running ? "Pause" : "Start"}
+				</button>
+				<button onClick={stop}>Reset</button>
 			</p>
 		</div>
-  )
+	)
 }
 
 export default Timer
