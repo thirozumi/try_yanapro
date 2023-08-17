@@ -1,0 +1,26 @@
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timer-display {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+.timer-control {
+  display: flex;
+  column-gap: 0.5rem;
+  > button {
+    border: none;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+  }
+}
+
+.timer-button-primary {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
