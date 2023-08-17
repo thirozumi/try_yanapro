@@ -3,25 +3,30 @@
   flex-direction: column-reverse;
   padding: 0;
   list-style: none;
-  > li {
+
+  >li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     padding: 1rem 0;
     border-top: 1px solid #ddd;
-    > p {
+
+    >p {
       margin: 0;
       font-size: 1.25rem;
     }
-    > small {
+
+    >small {
       color: #7f7f7f;
       font-size: 1rem;
     }
-    > * + * {
+
+    >*+* {
       margin-block-start: 0.5rem;
     }
-    > button {
+
+    >button {
       position: absolute;
       right: 1rem;
     }

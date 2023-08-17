@@ -12,7 +12,8 @@
 .timer-control {
   display: flex;
   column-gap: 0.5rem;
-  > button {
+
+  >button {
     border: none;
     padding: .5rem .75rem;
     font-size: 1rem;
